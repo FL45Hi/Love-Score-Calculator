@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Love Score Game</title>
+	<link rel="icon" href="favicon.ico" type="image/gif" sizes="16x16">
+	<style type="text/css">
+		@import url('https://fonts.googleapis.com/css?family=Sacramento&display=swap');
+        @import url('https://fonts.googleapis.com/css?family=Roboto:300');
+
+        * {
+        	box-sizing: border-box;
+        }
+        body{
+            margin: 0;
+            padding: 0;
+            font-family: 'Roboto',sans-serif,'Courier New', Courier, monospace;
+            background: url('love.jpg')  no-repeat;
+            background-size: cover;
+            width: 100%;
+        }
+        #container{
+
+            background-color: lightgrey;
+            width: 650px;
+            height: 520px;
+            position: absolute;
+            top: 40%;
+            left: 74%;
+            transform: translate(-50%,-40%);
+            box-shadow: 1px 1px 50px rgba(0,0,0,0,0.2);
+            border-radius: 10px;
+            opacity: 0.8;
+            padding-left: 30px;
+
+
+        }
+        h1{
+        	text-align: center;
+        	font-weight: 900;
+        	font-family: 'Sacramento', cursive;
+        	font-size: 45px;
+        	line-height: 1.5rem;
+        }
+        #form{
+        	padding-top: 50px; 
+        	padding-bottom: 50px;
+        }
+        input{
+            width: 50%;
+            height: 35px;
+            margin-bottom: 10px;
+            outline: none;
+            padding: 0 0 0 35px;
+            border: 1px solid rgba(0,0, 0,0);
+            border-bottom-color: skyblue;
+            /*background: transparent;*/
+            border-radius: 5px;
+        }
+        input:focus{
+            background-color: #f5f5f5;
+            border: 1px solid skyblue;
+        }
+        label {
+			    position: relative;
+			    top: 0;
+			    left: 0;
+
+		}
+
+
+		::placeholder{
+				    color: red;
+		}
+		button{
+			border: none;
+		    outline: none;
+		    color: red;
+		    font-size: 1rem;
+		    background-color: pink;
+		    width: 45%;
+		    height: 1.6rem;
+		    margin-left: 5px;
+		    border-radius: 8px;
+		     cursor: pointer;
+		     padding: 5px 0;
+		}
+		#score{
+			color: red;
+			padding-top: 30px;
+		}
+	</style>
+</head>
+
+<body>
+	<div id="container">
+		<h1>The Love Calculator </h1>
+		<p>Welcome to this invention of Doctor love. </p>
+		<hr style="background-color: red; margin-right: 50px; height: 3px">
+
+		<div id="form">
+		<p style="font-size: 1.1rem">Enter the vegenent soul Names to be analyzed: </p>
+		<label>
+			First person Name: 
+			<input id="first" type="text" name="first" placeholder="Name of person 1">
+		</label>
+		<br>
+
+		<label>
+			Second person Name: 
+			<input id="second" type="text" name="second" placeholder="Name of person 2">
+		</label>
+		<br>
+		<button onclick="myfun()">Calculate!</button>
+	</div>
+
+		<label id="score"></label>
+	</div>
+
+	<script type="text/javascript">
+		
+		function myfun(){
+			var f = document.getElementById("first").value;
+			var s = document.getElementById("second").value;
+
+			var str = " LOve Score of " + f + " & " + s ;
+			document.getElementById('score').innerHTML = 
+				str + Math.floor(Math.random()*100) + " % " ;
+
+		}
+
+		document.querySelector("button").click();
+	</script>
+</body>
+</html>
